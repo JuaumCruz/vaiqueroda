@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e483089-faf6-4cc8-8517-8120dec571e9" name="Default" comment="Criação de migrations de empresa e adição de campos em usuários">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-    </list>
+    <list default="true" id="1e483089-faf6-4cc8-8517-8120dec571e9" name="Default" comment="Criação de migrations de empresa e adição de campos em usuários" />
     <ignored path="vaiqueroda.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -83,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_02_18_195414_create_bookings_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -410,12 +405,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1487436654077</updated>
-      <workItem from="1487436657132" duration="10095000" />
+      <workItem from="1487436657132" duration="10219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10095000" />
+    <option name="totallyTimeSpent" value="10219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
@@ -612,7 +607,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_02_18_195414_create_bookings_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="33" />
           <folding />
         </state>
       </provider>
