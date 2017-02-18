@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@if(route_state('login'))
+    <style>
+        #header{display: none;}
+    </style>
+@endif
+
 @section('content')
 <div class="container">
     <div class="row">
