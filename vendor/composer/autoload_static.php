@@ -809,6 +809,7 @@ class ComposerStaticInit6d2f9811f63c84045be493cbc1e2bb24
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UsuarioAdminSeeder' => __DIR__ . '/../..' . '/database/seeds/UsuarioAdminSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
