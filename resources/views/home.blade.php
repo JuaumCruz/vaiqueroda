@@ -28,6 +28,10 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
             </div>
         </div>
 
@@ -50,6 +54,10 @@
                             Venha se divertir com seus amigos em uma emocionante pista e demonstrar seu taleto como piloto.
                         </p>
                     </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
                 </div>
             </div>
         </div>
@@ -74,6 +82,11 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -97,6 +110,11 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -120,6 +138,11 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -143,6 +166,11 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
