@@ -35,7 +35,19 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        $dados['user_id'] = Auth::user()->id;
+        $voucher = Voucher::findOrFail($dados['voucher_id']);
+        $dados['value'] = $voucher->sale->value;
+        $dados['used'] = false;
+
+        $booking = Booking::create($dados);
+
+        if ($booking->voucher->bookings->count() == $voucher->sale->minimum_users) {
+            $booking->voucher->update(['active' => true]);
+        }
+
+        return redirect()->route('voucher.index');
     }
 
     /**
