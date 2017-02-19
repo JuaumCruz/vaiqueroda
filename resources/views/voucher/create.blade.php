@@ -17,7 +17,36 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="post" action=" {{ route('voucher.store') }}">
                         {{ csrf_field() }}
-                        <input type="hidden" value="{{ $sale->id }}" name="sale_id" id="sale_id" />
+                        <input type="hidden" value="{{ $sale->id }}" name="sale_id" id="sale_id"/>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Empresa</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $sale->company->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Promoção</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $sale->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Pessoas para ativar</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $sale->minimum_users }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Valor por pessoa</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $sale->value }}">
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="booking_date" class="col-sm-2 control-label">Data de Uso</label>
                             <div class="col-sm-10">

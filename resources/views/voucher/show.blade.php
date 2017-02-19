@@ -12,17 +12,58 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div id="voucher" data-voucher-code="{{ $voucher }}" ></div>
+                    <div id="voucher" data-voucher-code="{{ $voucher }}"></div>
                     <h3 class="panel-title">Voucher {{ $voucher->code }}</h3>
                     <div class="actions">
                         <i class="fa fa-calendar"></i>
-                        {{--<div id="bookingDate" data-booking-date="{{ $voucher->booking_date  }}" ></div>--}}
+
                         <span>{{ $voucher->booking_date }}</span>
                     </div>
                 </div>
                 <div class="panel-body">
-
-
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Criado por</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->user->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Empresa</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->sale->company->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Promoção</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->sale->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Pessoas para ativar</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->sale->minimum_users }} ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Compras realizadas</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->bookings->count() }} ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Valor por pessoa</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" readonly="readonly"
+                                       value=" {{ $voucher->sale->value }}">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" id="comprar" class="btn btn-primary">
@@ -31,6 +72,7 @@
                                 </button>
                             </div>
                         </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -38,71 +80,70 @@
 @endsection
 
 
-<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js">
+<script type="text/javascript"
+        src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js">
 </script>
 
 @section('scripts')
-<script>
+    <script>
 
-    var basePath = 'http://localhost:8000/';
+        var basePath = 'http://localhost:8000/';
 
-    $("#comprar").click(function () {
-        var voucher = $('#voucher').data("voucher-code");
-        console.log(voucher);
+        $("#comprar").click(function () {
+            var voucher = $('#voucher').data("voucher-code");
+            console.log(voucher);
 
-        var data = {
-            code: voucher.code,
-            data: voucher.booking_date
-        };
-
-        $.ajax({
-            type: "POST",
-            url: basePath+'pagseguro-buy',
-            data: data,
-            success: function (response) {
-                console.log(response)
-                isOpenLightbox = PagSeguroLightbox({
-                    code: response
-                }, {
-                    success : function(transactionCode) {
-                        console.log(transactionCode);
-                        enviarCodigoTransacao(transactionCode);
-                    },
-                    abort : function() {
-                        alert("Você cancelou a compra");
-                    }
-                });
-
-                if (!isOpenLightbox){
-                    location.href="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code="+fieldId;
-                }
-
-            }
-            //dataType: dataType
-        });
-        
-        function enviarCodigoTransacao(transactionCode) {
+            var data = {
+                code: voucher.code,
+                data: voucher.booking_date
+            };
 
             $.ajax({
                 type: "POST",
-                url: basePath+'pagseguro-info',
-                data: {
-                    transactionCode : transactionCode
-                },
+                url: basePath + 'pagseguro-buy',
+                data: data,
                 success: function (response) {
-                   //mensagem de sucessoo
+                    console.log(response)
+                    isOpenLightbox = PagSeguroLightbox({
+                        code: response
+                    }, {
+                        success: function (transactionCode) {
+                            console.log(transactionCode);
+                            enviarCodigoTransacao(transactionCode);
+                        },
+                        abort: function () {
+                            alert("Você cancelou a compra");
+                        }
+                    });
+
+                    if (!isOpenLightbox) {
+                        location.href = "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" + fieldId;
+                    }
+
                 }
                 //dataType: dataType
             });
-        }
-    });
-    //var fieldId = $('#field').data("field-id");
-    //console.log(fieldId);
-    //PagSeguroLightbox(fieldId);
+
+            function enviarCodigoTransacao(transactionCode) {
+
+                $.ajax({
+                    type: "POST",
+                    url: basePath + 'pagseguro-info',
+                    data: {
+                        transactionCode: transactionCode
+                    },
+                    success: function (response) {
+                        //mensagem de sucessoo
+                    }
+                    //dataType: dataType
+                });
+            }
+        });
+        //var fieldId = $('#field').data("field-id");
+        //console.log(fieldId);
+        //PagSeguroLightbox(fieldId);
 
 
-
-
-</script>
+    </script>
 @endsection
 
