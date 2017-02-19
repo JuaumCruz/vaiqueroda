@@ -53,10 +53,11 @@
         var data = {
             code: voucher.code,
             data: voucher.booking_date
-        }
+        };
+
         $.ajax({
             type: "POST",
-            url: basePath+'pagseuro-buy',
+            url: basePath+'pagseguro-buy',
             data: data,
             success: function (response) {
                 console.log(response)
@@ -64,10 +65,11 @@
                     code: response
                 }, {
                     success : function(transactionCode) {
-                        alert("success - " + transactionCode);
+                        console.log(transactionCode);
+                        enviarCodigoTransacao(transactionCode);
                     },
                     abort : function() {
-                        alert("abort");
+                        alert("Você cancelou a compra");
                     }
                 });
 
@@ -78,6 +80,21 @@
             }
             //dataType: dataType
         });
+        
+        function enviarCodigoTransacao(transactionCode) {
+
+            $.ajax({
+                type: "POST",
+                url: basePath+'pagseguro-info',
+                data: {
+                    transactionCode : transactionCode
+                },
+                success: function (response) {
+                   //mensagem de sucessoo
+                }
+                //dataType: dataType
+            });
+        }
     });
     //var fieldId = $('#field').data("field-id");
     //console.log(fieldId);

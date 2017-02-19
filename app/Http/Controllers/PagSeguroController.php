@@ -79,9 +79,15 @@ class PagSeguroController extends Controller
         //return redirect()->route('pagseguro.redirect')->with(['path'=> $pathCurrent, 'data'=> $data]);
     }
 
-    public function getInfo()
+    public function getInfo(Request $request)
     {
-        return "Dados da transação";
+        //$code = 'A2401CD721924F01B82DE51AB3567F23';
+        $transactionCode = preg_replace('/-/', '', $request->input('transactionCode'));
+        $credentials = PagSeguro::credentials()->get();
+        $transaction = PagSeguro::transaction()->get($transactionCode, $credentials);
+        $information = $transaction->getInformation();
+        $status = $information->getStatus()->getName();
+        return $status;
     }
 
     public function getRedirect(Request $request)
@@ -91,6 +97,17 @@ class PagSeguroController extends Controller
 
     public function postNotification(Request $request)
     {
-        return "Notificação";
+
+
+        //$teste = "39A8FBED0FB24885A102199D40DBF67C";
+        //39A8FBED-0FB2-4885-A102-199D40DBF67C
+
+        //$transactionCode = preg_replace('/-/', '', $request->input('transactionCode'));
+
+//        $credentials = PagSeguro::credentials()->get();
+//        $transaction = PagSeguro::transaction()->get($transactionCode, $credentials);
+//        $information = $transaction->getInformation();
+//        dd($information);
+//        return $information;
     }
 }

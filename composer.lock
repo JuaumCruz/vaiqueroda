@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e3568ae7f3db98d20ba24b35a002c43",
+    "content-hash": "d9ac155b3a9657d09d285bf44e06ce11",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -507,16 +507,16 @@
         },
         {
             "name": "michael/laravelpagseguro",
-            "version": "1.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaeldouglas/laravel-pagseguro.git",
-                "reference": "e9f27e3f7d0bd0bbcfeb48758d97b6906d73b99f"
+                "reference": "f0981fbca372f9de3be6d4b14597e645cd2f5492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaeldouglas/laravel-pagseguro/zipball/e9f27e3f7d0bd0bbcfeb48758d97b6906d73b99f",
-                "reference": "e9f27e3f7d0bd0bbcfeb48758d97b6906d73b99f",
+                "url": "https://api.github.com/repos/michaeldouglas/laravel-pagseguro/zipball/f0981fbca372f9de3be6d4b14597e645cd2f5492",
+                "reference": "f0981fbca372f9de3be6d4b14597e645cd2f5492",
                 "shasum": ""
             },
             "require": {
@@ -557,7 +557,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-07T19:36:10+00:00"
+            "time": "2016-12-02 00:34:22"
         },
         {
             "name": "monolog/monolog",
@@ -3384,7 +3384,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "michael/laravelpagseguro": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

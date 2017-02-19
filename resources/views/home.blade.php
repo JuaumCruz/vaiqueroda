@@ -8,7 +8,7 @@
 
 @section('content')
 
-        @foreach($sales as $sale)
+    @foreach($sales as $sale)
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
             <div class="panel panel-success">
                 <div class="panel-heading">
@@ -32,11 +32,12 @@
                             <li class="fa fa-ticket"></li> Gerar Voucher
                         </button>
                     </a>
+
                 </div>
             </div>
         </div>
-        @endforeach
+    @endforeach
+
 
 
 @endsection
-

@@ -13,9 +13,7 @@
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
@@ -83,7 +81,13 @@ Route::get('teste', function(){
     return "nao deu";
 });
 
-Route::post('pagseuro-buy','PagSeguroController@postBuy')->name('pagseguro.buy');
-Route::get('pagseuro-info','PagSeguroController@getInfo')->name('pagseguro.info');
+Route::post('pagseguro-buy','PagSeguroController@postBuy')->name('pagseguro.buy');
+Route::post('pagseguro-info','PagSeguroController@getInfo')->name('pagseguro.info');
 Route::get('pagseguro-redirect','PagSeguroController@getRedirect')->name('pagseguro.redirect');
+
 Route::post('pagseguro-notification','PagSeguroController@PostNotification')->name('pagseguro.notification');
+
+//Route::post('pagseguro-notification', [
+//    'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification',
+//    'as' => 'pagseguro.notification',
+//]);
