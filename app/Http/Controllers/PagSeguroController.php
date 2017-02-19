@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -10,11 +11,13 @@ use laravel\pagseguro\Platform\Laravel5\PagSeguro;
 class PagSeguroController extends Controller
 {
 
+
     public function postBuy(Request $request)
     {
         $user = Auth::user();
 
-        //$voucher = $request->all();
+        $voucher = $request->all();
+
         //$pathCurrent = $request->header()['referer'][0];
         $data = [
             'items' => [
@@ -76,18 +79,22 @@ class PagSeguroController extends Controller
 
         return $code;
 
-        //return redirect()->route('pagseguro.redirect')->with(['path'=> $pathCurrent, 'data'=> $data]);
     }
 
-    public function getInfo(Request $request)
+    public function postInfo(Request $request)
     {
         //$code = 'A2401CD721924F01B82DE51AB3567F23';
-        $transactionCode = preg_replace('/-/', '', $request->input('transactionCode'));
+        /*$transactionCode = preg_replace('/-/', '', $request->input('transactionCode'));
         $credentials = PagSeguro::credentials()->get();
         $transaction = PagSeguro::transaction()->get($transactionCode, $credentials);
         $information = $transaction->getInformation();
-        $status = $information->getStatus()->getName();
-        return $status;
+        $status = $information->getStatus()->getName();*/
+        $user = Auth::user();
+
+
+
+
+        return $request->input('voucher_id');
     }
 
     public function getRedirect(Request $request)

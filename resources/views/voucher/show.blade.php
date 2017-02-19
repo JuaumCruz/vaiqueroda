@@ -48,25 +48,25 @@
 
     $("#comprar").click(function () {
         var voucher = $('#voucher').data("voucher-code");
-        console.log(voucher);
+        //console.log(voucher);
 
-        var data = {
-            code: voucher.code,
-            data: voucher.booking_date
-        };
+        var data = voucher;
+
 
         $.ajax({
             type: "POST",
             url: basePath+'pagseguro-buy',
             data: data,
             success: function (response) {
-                console.log(response)
+                //console.log(response)
                 isOpenLightbox = PagSeguroLightbox({
                     code: response
                 }, {
                     success : function(transactionCode) {
-                        console.log(transactionCode);
-                        enviarCodigoTransacao(transactionCode);
+                        //console.log(transactionCode);
+                        enviarCodigoTransacao(transactionCode, data);
+
+
                     },
                     abort : function() {
                         alert("Você cancelou a compra");
@@ -81,20 +81,37 @@
             //dataType: dataType
         });
         
-        function enviarCodigoTransacao(transactionCode) {
-
+        function enviarCodigoTransacao(transactionCode, data) {
+            console.log(data);
             $.ajax({
                 type: "POST",
                 url: basePath+'pagseguro-info',
                 data: {
-                    transactionCode : transactionCode
+                    transactionCode : transactionCode,
+                    voucher_id:data.id
                 },
                 success: function (response) {
                    //mensagem de sucessoo
+                    //console.log(response);
+                    confirmacaodacompra(response);
                 }
                 //dataType: dataType
             });
         }
+
+        function confirmacaodacompra(response) {
+            console.log(response);
+            $.ajax({
+                type: "POST",
+                url: basePath+'booking',
+                data: response,
+                success: function (res) {
+                    console.log(res);
+                }
+                //dataType: dataType
+            });
+        }
+
     });
     //var fieldId = $('#field').data("field-id");
     //console.log(fieldId);
