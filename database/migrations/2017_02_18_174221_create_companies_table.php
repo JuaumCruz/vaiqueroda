@@ -18,6 +18,8 @@ class CreateCompaniesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('cnpj')->unique();
+            $table->string('presentation');
+            $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -29,6 +29,12 @@
                                 <input type="text" class="form-control" id="name" name="name">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="presentation" class="col-sm-2 control-label">Apresentação</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="presentation" name="presentation"></textarea>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">

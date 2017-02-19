@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Sale;
 use App\Voucher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VoucherController extends Controller
 {
@@ -14,7 +16,9 @@ class VoucherController extends Controller
      */
     public function index()
     {
-        //
+        $vouchers = Auth::user()->vouchers;
+        $bookings = Auth::user()->bookings;
+        return view('voucher.index ', compact('vouchers', 'bookings'));
     }
 
     /**
@@ -22,9 +26,10 @@ class VoucherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $sale = Sale::findOrFail($request->get('sale_id'));
+        return view('voucher.create', compact('sale'));
     }
 
     /**
@@ -35,7 +40,13 @@ class VoucherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        $dados['user_id'] = Auth::user()->id;
+        $dados['code'] = uniqid("#");
+        $dados['active'] = false;
+        Voucher::create($dados);
+
+        return redirect()->route('voucher.index');
     }
 
     /**
@@ -46,7 +57,7 @@ class VoucherController extends Controller
      */
     public function show(Voucher $voucher)
     {
-        //
+        return view('voucher.show', compact('voucher'));
     }
 
     /**
