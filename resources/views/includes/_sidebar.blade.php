@@ -20,6 +20,7 @@
                         <i class="fa fa-fw fa-home"></i> Home
                     </a>
                 </li>
+                @if(Auth::user()->email == 'admin@admin.com')
                 <li class="{{ route_state('company.*') }}">
                     <a href="{{ route('company.index') }}" title="Empresa">
                         <i class="fa fa-fw fa-building"></i> Empresa
@@ -30,6 +31,7 @@
                         <i class="fa fa-fw fa-tags"></i> Promoção
                     </a>
                 </li>
+                @endif
                 <li class="{{ route_state('voucher.*') }}">
                     <a href="{{ route('voucher.index') }}" title="Voucher">
                         <i class="fa fa-fw fa-ticket"></i> Voucher

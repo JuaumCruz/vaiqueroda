@@ -26,3 +26,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Company::class, function (Faker\Generator $faker) {
    return [];
 });
+
+$factory->define(App\Sale::class, function (Faker\Generator $faker) {
+    return [];
+});

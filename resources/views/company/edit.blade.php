@@ -36,9 +36,7 @@
                         <div class="form-group">
                             <label for="presentation" class="col-sm-2 control-label">Apresentação</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id="presentation" name="presentation">
-                                    {{ $company->presentation }}
-                                </textarea>
+                                <textarea class="form-control" id="presentation" name="presentation">{{ $company->presentation }}</textarea>
                             </div>
                         </div>
 
