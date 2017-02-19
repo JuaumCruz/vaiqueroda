@@ -20,16 +20,13 @@ class UserSeeder extends Seeder
             'phone_number' => "11985445522"
         ]);
 
-        for($i=0; $i < 10; $i++) {
-            factory(\App\User::class)->create([
-                'name' => "User APP {$i}",
-                'email'=> "user{$i}@vaique.com",
-                'cpf'=> "0000000000{$i}",
-                'birth_date'=> "199{$i}-01-01",
-                'password'=> bcrypt("user{$i}"),
-                'phone_number' => "8399900000{$i}"
-            ]);
-        }
-
+        factory(\App\User::class)->create([
+            'name' => "User APP",
+            'email'=> "user@vaique.com",
+            'cpf'=> "05518928467",
+            'birth_date'=> "1990-01-01",
+            'password'=> bcrypt("user"),
+            'phone_number' => "83999000000"
+        ]);
     }
 }

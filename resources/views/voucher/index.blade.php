@@ -14,7 +14,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Vouchers criados</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <table class="table table-hover">
                             <thead>
                             <tr>
@@ -65,7 +65,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Vouchers comprados</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <table class="table table-hover">
                             <thead>
                             <tr>

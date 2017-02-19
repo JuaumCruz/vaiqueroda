@@ -23,7 +23,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="panel-body">
+                <div class="panel-body table-responsive">
                     @if($companies->count())
                         <table class="table table-hover">
                             <thead>
