@@ -15,19 +15,30 @@
                     <h3 class="panel-title">Edição de empresa</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="post" action=" {{ route('company.update', $company->id) }}">
+                    <form class="form-horizontal" role="form" method="post"
+                          action=" {{ route('company.update', $company->id) }}">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
                         <div class="form-group">
                             <label for="cnpj" class="col-sm-2 control-label">CNPJ</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="cnpj" name="cnpj" value="{{ $company->cnpj }}">
+                                <input type="text" class="form-control" id="cnpj" name="cnpj"
+                                       value="{{ $company->cnpj }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nome</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" value="{{ $company->name }}">
+                                <input type="text" class="form-control" id="name" name="name"
+                                       value="{{ $company->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="presentation" class="col-sm-2 control-label">Apresentação</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="presentation" name="presentation">
+                                    {{ $company->presentation }}
+                                </textarea>
                             </div>
                         </div>
 
