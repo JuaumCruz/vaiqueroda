@@ -28,6 +28,10 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
             </div>
         </div>
 
@@ -51,13 +55,17 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">PARQUE AGUARTICO</h3>
+                    <h3 class="panel-title">PARQUE AQUATICO</h3>
                     <div class="actions pull-right">
                         <i class="fa fa-expand"></i>
                         <i class="fa fa-chevron-down"></i>
@@ -74,6 +82,11 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -93,10 +106,15 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            Venha desfrutar com seus amigos de nossas maravilhosas pizzas de segunda a quinta com descontos especiais para grupos.
+                            Venha desfrutar com seus amigos de nossas carnes especias, preparadas a partir da autêntica tradição gaúcha.
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -116,10 +134,15 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            Venha desfrutar com seus amigos de nossas maravilhosas pizzas de segunda a quinta com descontos especiais para grupos.
+                            Desfrufe te momentos de descontração com seus amigos saboreando as mais diversas cachaças da região
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
@@ -139,10 +162,15 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            Venha desfrutar com seus amigos de nossas maravilhosas pizzas de segunda a quinta com descontos especiais para grupos.
+                            A beira mar no bessa, local agradavel e descontraido para curtir com os amigos boa música em seu happy hour semanal.
                         </p>
                     </div>
                 </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-default btn-sm">Comprar</button>
+                    <button type="button" class="btn btn-default btn-sm">Compartilhar</button>
+                </div>
+
             </div>
         </div>
 
