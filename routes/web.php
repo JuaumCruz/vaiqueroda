@@ -82,7 +82,7 @@ Route::get('teste', function(){
 });
 
 Route::post('pagseguro-buy','PagSeguroController@postBuy')->name('pagseguro.buy');
-Route::post('pagseguro-info','PagSeguroController@getInfo')->name('pagseguro.info');
+Route::post('pagseguro-info','PagSeguroController@postInfo')->name('pagseguro.info');
 Route::get('pagseguro-redirect','PagSeguroController@getRedirect')->name('pagseguro.redirect');
 
 Route::post('pagseguro-notification','PagSeguroController@PostNotification')->name('pagseguro.notification');
