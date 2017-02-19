@@ -28,14 +28,14 @@ class User extends Authenticatable
     ];
 
     public function companies() {
-        $this->hasMany(Company::class);
+        return $this->hasMany(Company::class);
     }
 
     public function bookings() {
-        $this->hasMany(Booking::class);
+        return $this->hasMany(Booking::class);
     }
 
     public function vouchers() {
-        $this->hasMany(Voucher::class);
+        return $this->hasMany(Voucher::class);
     }
 }

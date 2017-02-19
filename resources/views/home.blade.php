@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title-page', 'Home')
+
+@section('breadcrumb')
+    <li class="active">Home</li>
+@endsection
+
 @section('content')
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">

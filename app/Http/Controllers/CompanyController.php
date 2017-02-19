@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -14,7 +15,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Auth::user()->companies;
+        return view('company.index', compact('companies'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        $dados['user_id'] = Auth::user()->id;
+        Company::create($dados);
+
+        return redirect()->route('company.index');
     }
 
     /**
@@ -57,7 +63,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('company.edit', compact('company'));
     }
 
     /**
@@ -69,7 +75,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $dados = $request->all();
+        $company->update($dados);
+
+        return redirect()->route('company.index');
     }
 
     /**
@@ -80,6 +89,7 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+        return redirect()->route('company.index');
     }
 }
