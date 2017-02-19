@@ -3,26 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use laravel\pagseguro\Platform\Laravel5\PagSeguro;
 
 class PagSeguroController extends Controller
 {
 
     public function postBuy(Request $request)
     {
-        //itens[] = vaucher
+        $user = Auth::user();
+       return $user->toArray();
+        //$pathCurrent = $request->header()['referer'][0];
         $data = [
             'items' => [
                 [
                     'id' => '18',
                     'description' => 'Item Um',
                     'quantity' => '1',
-                    'amount' => '5.99',
+                    'amount' => '1.15',
                     'weight' => '45',
                     'shippingCost' => '3.5',
                     'width' => '50',
                     'height' => '45',
                     'length' => '60',
-                ]
+                ],
+                [
+                    'id' => '19',
+                    'description' => 'Item Dois',
+                    'quantity' => '1',
+                    'amount' => '3.15',
+                    'weight' => '50',
+                    'shippingCost' => '8.5',
+                    'width' => '40',
+                    'height' => '50',
+                    'length' => '80',
+                ],
             ],
             'shipping' => [
                 'address' => [
@@ -46,29 +62,22 @@ class PagSeguroController extends Controller
                         'type' => 'CPF'
                     ]
                 ],
-                //'phone' => '11985445522',
+                'phone' => '11985445522',
                 'bornDate' => '1988-03-21',
             ]
         ];
 
         $checkout = PagSeguro::checkout()->createFromArray($data);
-        $credentials = PagSeguro::credentials()->get();
-        $information = $checkout->send($credentials);
-        /*if ($information) {
-            print_r($information->getCode());
-            print_r($information->getDate());
-            print_r($information->getLink());
-        }*/
 
+        $credentials = PagSeguro::credentials()->get();
+
+        $information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
         $link = $information->getLink();
         $code = $information->getCode();
 
-        //$transaction = PagSeguro::transaction()->get($code, $credentials);
+        return $code;
 
-        return view('welcome', compact('link','code'));
-        //return redirect()->route('pagseguro.redirect');
-
-        return "Compra";
+        //return redirect()->route('pagseguro.redirect')->with(['path'=> $pathCurrent, 'data'=> $data]);
     }
 
     public function getInfo()
@@ -76,9 +85,9 @@ class PagSeguroController extends Controller
         return "Dados da transação";
     }
 
-    public function getRedirect()
+    public function getRedirect(Request $request)
     {
-        return "Simples redirecionamento";
+
     }
 
     public function postNotification(Request $request)

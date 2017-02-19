@@ -36,6 +36,7 @@
     <!--[if lt IE 9]>
     <script src="/assets/js/vendor/html5shiv.js"></script>
     <script src="/assets/js/vendor/respond.min.js"></script>
+
     <![endif]-->
 
     <!-- Scripts -->
@@ -111,5 +112,8 @@
         app.spinStop();
     });
 </script>
+
+@yield('scripts')
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 @if(Auth::user())
     <header id="header">
         <!--logo start-->
