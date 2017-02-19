@@ -12,12 +12,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         factory(\App\User::class)->create([
-            'name' => "Admin",
+            'name' => "Admin Vai que Roda!",
             'email'=> "admin@admin.com",
-            'cpf'=> "1234567890",
+            'cpf'=> "71762747111",
             'birth_date'=> "1999-01-01",
             'password'=> bcrypt('admin'),
-            'phone_number' => "99900-0000"
+            'phone_number' => "11985445522"
         ]);
 
         for($i=0; $i < 10; $i++) {

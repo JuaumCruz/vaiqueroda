@@ -13,15 +13,16 @@ class PagSeguroController extends Controller
     public function postBuy(Request $request)
     {
         $user = Auth::user();
-       return $user->toArray();
+
+        //$voucher = $request->all();
         //$pathCurrent = $request->header()['referer'][0];
         $data = [
             'items' => [
                 [
                     'id' => '18',
-                    'description' => 'Item Um',
+                    'description' => 'Voucher 1',
                     'quantity' => '1',
-                    'amount' => '1.15',
+                    'amount' => '5.99',
                     'weight' => '45',
                     'shippingCost' => '3.5',
                     'width' => '50',
@@ -29,16 +30,16 @@ class PagSeguroController extends Controller
                     'length' => '60',
                 ],
                 [
-                    'id' => '19',
-                    'description' => 'Item Dois',
+                    'id' => '18',
+                    'description' => 'Voucher 1',
                     'quantity' => '1',
-                    'amount' => '3.15',
-                    'weight' => '50',
-                    'shippingCost' => '8.5',
-                    'width' => '40',
-                    'height' => '50',
-                    'length' => '80',
-                ],
+                    'amount' => '5.99',
+                    'weight' => '45',
+                    'shippingCost' => '3.5',
+                    'width' => '50',
+                    'height' => '45',
+                    'length' => '60',
+                ]
             ],
             'shipping' => [
                 'address' => [
@@ -54,23 +55,21 @@ class PagSeguroController extends Controller
                 'cost' => 30.4,
             ],
             'sender' => [
-                'email' => 'sender@gmail.com',
-                'name' => 'Isaque de Souza Barbosa',
+                'email' => $user->email,
+                'name' => $user->name ,
                 'documents' => [
                     [
-                        'number' => '01234567890',
+                        'number' => $user->cpf,
                         'type' => 'CPF'
                     ]
                 ],
-                'phone' => '11985445522',
-                'bornDate' => '1988-03-21',
+                //'phone' => '990077665',
+                'bornDate' => $user->birth_date,
             ]
         ];
 
         $checkout = PagSeguro::checkout()->createFromArray($data);
-
         $credentials = PagSeguro::credentials()->get();
-
         $information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
         $link = $information->getLink();
         $code = $information->getCode();
