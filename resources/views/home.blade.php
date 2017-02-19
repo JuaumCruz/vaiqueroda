@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title-page', 'Home')
+
+@section('breadcrumb')
+    <li class="active">Home</li>
+@endsection
+
 @section('content')
 
     <section id="main-content">
