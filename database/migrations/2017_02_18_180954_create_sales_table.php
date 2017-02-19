@@ -20,7 +20,7 @@ class CreateSalesTable extends Migration
             $table->string('description');
             $table->date('due_date');
             $table->integer('daily_limit')->unsigned();
-            $table->integer('mininum_users')->unsigned();
+            $table->integer('minimum_users')->unsigned();
             $table->decimal('value', 9, 2);
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();

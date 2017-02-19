@@ -15,10 +15,19 @@
             <h5 class="sidebar-header">Menu</h5>
 
             <ul class="nav nav-pills nav-stacked">
-
                 <li class="{{ route_state('home') }}">
-                    <a href="{{ url('/') }}" title="Home">
-                        <i class="fa  fa-fw fa-home"></i> Home
+                    <a href="{{ route('home') }}" title="Home">
+                        <i class="fa fa-fw fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="{{ route_state('company.*') }}">
+                    <a href="{{ route('company.index') }}" title="Empresa">
+                        <i class="fa fa-fw fa-home"></i> Empresa
+                    </a>
+                </li>
+                <li class="{{ route_state('sale.*') }}">
+                    <a href="{{ route('sale.index') }}" title="Promoção">
+                        <i class="fa fa-fw fa-home"></i> Promoção
                     </a>
                 </li>
             </ul>

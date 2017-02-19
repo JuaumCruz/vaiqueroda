@@ -55,12 +55,18 @@
 
         <section class="{{ Auth::user() ? 'main-content-wrapper' : '' }}">
             <div class="{{ Auth::user() ? 'pageheader' : '' }}">
-                <h1> @yield('title-page')</h1>
+                <h1>@yield('title-page')</h1>
                 <p class="description">@yield('description-page')</p>
+                <div class="breadcrumb-wrapper hidden-xs">
+                    <ol class="breadcrumb">
+                        @yield('breadcrumb')
+                    </ol>
+                </div>
             </div>
             <section id="main-content" class="">
                 @yield('content')
             </section>
+
         </section>
     </section>
 
