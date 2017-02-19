@@ -22,12 +22,12 @@ class UserSeeder extends Seeder
 
         for($i=0; $i < 10; $i++) {
             factory(\App\User::class)->create([
-                'name' => "User {$i}",
+                'name' => "User APP {$i}",
                 'email'=> "user{$i}@vaique.com",
                 'cpf'=> "0000000000{$i}",
                 'birth_date'=> "199{$i}-01-01",
                 'password'=> bcrypt("user{$i}"),
-                'phone_number' => "99900-000{$i}"
+                'phone_number' => "8399900000{$i}"
             ]);
         }
 

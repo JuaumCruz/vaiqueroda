@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use laravel\pagseguro\Platform\Laravel5\PagSeguro;
 
 class PagSeguroController extends Controller
@@ -14,31 +14,20 @@ class PagSeguroController extends Controller
     {
         $user = Auth::user();
 
-        //$voucher = $request->all();
+        $voucher = Voucher::whereCode($request->get('code'))->get()->first();
         //$pathCurrent = $request->header()['referer'][0];
         $data = [
             'items' => [
                 [
-                    'id' => '18',
-                    'description' => 'Voucher 1',
+                    'id' => $voucher->id,
+                    'description' => $voucher->sale->name,
                     'quantity' => '1',
-                    'amount' => '5.99',
-                    'weight' => '45',
-                    'shippingCost' => '3.5',
-                    'width' => '50',
-                    'height' => '45',
-                    'length' => '60',
-                ],
-                [
-                    'id' => '18',
-                    'description' => 'Voucher 1',
-                    'quantity' => '1',
-                    'amount' => '5.99',
-                    'weight' => '45',
-                    'shippingCost' => '3.5',
-                    'width' => '50',
-                    'height' => '45',
-                    'length' => '60',
+                    'amount' => $voucher->sale->value,
+                    'weight' => '0',
+                    'shippingCost' => '0',
+                    'width' => '0',
+                    'height' => '0',
+                    'length' => '0',
                 ]
             ],
             'shipping' => [
@@ -52,7 +41,7 @@ class PagSeguroController extends Controller
                     'country' => 'BRA',
                 ],
                 'type' => 2,
-                'cost' => 30.4,
+                'cost' => 0,
             ],
             'sender' => [
                 'email' => $user->email,
@@ -63,7 +52,7 @@ class PagSeguroController extends Controller
                         'type' => 'CPF'
                     ]
                 ],
-                //'phone' => '990077665',
+                'phone' => $user->phone_number,
                 'bornDate' => $user->birth_date,
             ]
         ];

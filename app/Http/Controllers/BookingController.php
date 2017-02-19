@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Voucher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {

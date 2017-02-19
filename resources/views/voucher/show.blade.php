@@ -64,6 +64,8 @@
                                        value=" {{ $voucher->sale->value }}">
                             </div>
                         </div>
+                    </form>
+                    <div class="row">
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" id="comprar" class="btn btn-primary">
@@ -72,7 +74,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,8 +93,6 @@
 
         $("#comprar").click(function () {
             var voucher = $('#voucher').data("voucher-code");
-            console.log(voucher);
-
             var data = {
                 code: voucher.code,
                 data: voucher.booking_date
@@ -103,10 +103,7 @@
                 url: basePath + 'pagseguro-buy',
                 data: data,
                 success: function (response) {
-                    console.log(response)
-                    isOpenLightbox = PagSeguroLightbox({
-                        code: response
-                    }, {
+                    isOpenLightbox = PagSeguroLightbox(response, {
                         success: function (transactionCode) {
                             console.log(transactionCode);
                             enviarCodigoTransacao(transactionCode);
@@ -125,15 +122,16 @@
             });
 
             function enviarCodigoTransacao(transactionCode) {
-
+                var voucher = $('#voucher').data("voucher-code");
                 $.ajax({
                     type: "POST",
-                    url: basePath + 'pagseguro-info',
+                    url: basePath+'booking',
                     data: {
+                        voucher_id: voucher.id,
                         transactionCode: transactionCode
                     },
                     success: function (response) {
-                        //mensagem de sucessoo
+                        location.href = basePath+'voucher';
                     }
                     //dataType: dataType
                 });
