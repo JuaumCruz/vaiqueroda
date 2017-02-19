@@ -5,8 +5,8 @@
         <div class="brand">
             <a href="{{ url('/') }}" class="logo">
 
-                <i class="fa  fa-book"></i>
-                <span>VaiQue</span>Roda</a>
+                <i class="fa  fa-money"></i>
+                <span>VaiQue</span>Compra</a>
         </div>
         <!--logo end-->
         <ul class="nav navbar-nav navbar-left">
