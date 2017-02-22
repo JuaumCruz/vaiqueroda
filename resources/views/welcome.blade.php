@@ -1,7 +1,5 @@
-@extends('layouts.frenteLoja')
+@extends('layouts.app')
 
 @section('content')
-
-    Frente de loja
 
 @endsection

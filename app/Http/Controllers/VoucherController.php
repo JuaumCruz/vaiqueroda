@@ -68,7 +68,7 @@ class VoucherController extends Controller
      */
     public function edit(Voucher $voucher)
     {
-        //
+        return $this->error();
     }
 
     /**
@@ -80,7 +80,7 @@ class VoucherController extends Controller
      */
     public function update(Request $request, Voucher $voucher)
     {
-        //
+        return $this->error();
     }
 
     /**
@@ -91,6 +91,6 @@ class VoucherController extends Controller
      */
     public function destroy(Voucher $voucher)
     {
-        //
+        return $this->error();
     }
 }

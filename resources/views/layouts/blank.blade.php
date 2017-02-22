@@ -48,30 +48,9 @@
 </head>
 <body>
     <div id="app">
-
-        <section id="main-wrapper" class="theme-default">
-
-            @include('includes._header')
-            @include('includes._sidebar')
-
-            <section class="main-content-wrapper">
-                <div class="pageheader">
-                    <h1>@yield('title-page')</h1>
-                    <p class="description">@yield('description-page')</p>
-                    <div class="breadcrumb-wrapper hidden-xs">
-                        <ol class="breadcrumb">
-                            @yield('breadcrumb')
-                        </ol>
-                    </div>
-                </div>
-                <section id="main-content" class="fadeInUp animated">
-                    @yield('content')
-                </section>
-
-            </section>
+        <section class="container animated fadeInUp">
+            @yield('content')
         </section>
-
-
     </div>
 
     <!-- Scripts -->

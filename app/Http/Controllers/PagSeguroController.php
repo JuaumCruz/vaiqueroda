@@ -93,10 +93,10 @@ class PagSeguroController extends Controller
 
         //$transactionCode = preg_replace('/-/', '', $request->input('transactionCode'));
 
-//        $credentials = PagSeguro::credentials()->get();
-//        $transaction = PagSeguro::transaction()->get($transactionCode, $credentials);
-//        $information = $transaction->getInformation();
-//        dd($information);
-//        return $information;
+        //        $credentials = PagSeguro::credentials()->get();
+        //        $transaction = PagSeguro::transaction()->get($transactionCode, $credentials);
+        //        $information = $transaction->getInformation();
+        //        dd($information);
+        //        return $information;
     }
 }
