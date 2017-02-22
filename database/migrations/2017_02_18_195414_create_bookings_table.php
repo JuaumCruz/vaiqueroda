@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('voucher_id')->unsigned();
-            $table->decimal('value', 9, 2);
+            $table->decimal('value', 9, 2)->default(0.00);
             $table->boolean('used')->default(false);
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('voucher_id')->references('id')->on('vouchers');

@@ -18,8 +18,8 @@ class CreateVouchersTable extends Migration
             $table->integer('sale_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('code')->unique();
-            $table->boolean('active');
-            $table->date('booking_date');
+            $table->boolean('active')->default(false);
+            $table->date('booking_date')->nullable();
             $table->timestamps();
             $table->foreign('sale_id')->references('id')->on('sales');
             $table->foreign('user_id')->references('id')->on('users');

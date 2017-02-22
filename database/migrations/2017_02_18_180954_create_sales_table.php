@@ -17,11 +17,11 @@ class CreateSalesTable extends Migration
             $table->increments('id');
             $table->integer('company_id')->unsigned();
             $table->string('name');
-            $table->string('description');
-            $table->date('due_date');
-            $table->integer('daily_limit')->unsigned();
-            $table->integer('minimum_users')->unsigned();
-            $table->decimal('value', 9, 2);
+            $table->string('description')->nullable();
+            $table->date('due_date')->nullable();
+            $table->integer('daily_limit')->unsigned()->default(10);
+            $table->integer('minimum_users')->unsigned()->default(1);
+            $table->decimal('value', 9, 2)->default(0.00);
             $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
         });
