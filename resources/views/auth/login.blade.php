@@ -45,12 +45,18 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <label class="col-md-4 control-label">Remember Me</label>
+
+                            <div class="col-md-3">
                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                                    <input type="checkbox" class="icheck" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                 </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-link pull-right" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
 
@@ -61,10 +67,8 @@
                                 </button>
                                 <a class="btn btn-default" href="{{ route('register') }}">
                                     Register
-                                </button>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
                                 </a>
+
                             </div>
                         </div>
                     </form>
@@ -73,4 +77,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function() {
+    app.customCheckbox();
+});
+</script>
 @endsection

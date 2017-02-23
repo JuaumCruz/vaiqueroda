@@ -15,7 +15,7 @@
         <h5 class="sidebar-header">Menu</h5>
 
         <ul class="nav nav-pills nav-stacked">
-            <li class="{{ route_state('home') }} {{ route_state('') }}">
+            <li class="{{ route_state('home') }} {{ route_state('root') }}">
                 <a href="{{ route('home') }}" title="Home">
                     <i class="fa fa-fw fa-home"></i> Home
                 </a>

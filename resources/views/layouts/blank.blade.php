@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/assets/css/simple-line-icons.css">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="/assets/css/animate.css">
+    <!--Page Level CSS-->
+    <link rel="stylesheet" href="assets/plugins/icheck/css/all.css">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="/assets/plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- Calendar demo -->
@@ -58,6 +60,8 @@
     <script src="/assets/js/vendor/jquery-1.11.1.min.js"></script>
     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/plugins/navgoco/jquery.navgoco.min.js"></script>
+    <script src="assets/plugins/icheck/js/icheck.min.js"></script>
+    <script src="assets/plugins/switchery/switchery.min.js"></script>
     <script src="/assets/plugins/pace/pace.min.js"></script>
     <script src="/assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
     <script src="/assets/js/src/app.js"></script>
