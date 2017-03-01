@@ -52,7 +52,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return $this->error();
+        abort(404);
     }
 
     /**

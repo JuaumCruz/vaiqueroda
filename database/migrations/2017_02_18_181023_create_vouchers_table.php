@@ -19,7 +19,7 @@ class CreateVouchersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('code')->unique();
             $table->boolean('active')->default(false);
-            $table->date('booking_date')->nullable();
+            $table->date('booking_date');
             $table->timestamps();
             $table->foreign('sale_id')->references('id')->on('sales');
             $table->foreign('user_id')->references('id')->on('users');

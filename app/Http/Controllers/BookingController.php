@@ -16,7 +16,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
@@ -26,7 +26,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
@@ -60,7 +60,7 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
@@ -71,7 +71,7 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
@@ -83,7 +83,7 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
@@ -94,6 +94,6 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
-        return $this->error();
+        abort(404);
     }
 }

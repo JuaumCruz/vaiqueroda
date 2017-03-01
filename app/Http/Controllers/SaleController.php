@@ -56,7 +56,7 @@ class SaleController extends Controller
      */
     public function show(Sale $sale)
     {
-        return $this->error();
+        abort(404);
     }
 
     /**
