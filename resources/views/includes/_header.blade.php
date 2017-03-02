@@ -33,7 +33,7 @@
             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="meta">
                     <span class="avatar">
-                        <img src=" {{  URL::to('/') }}/assets/img/avatar4.jpg"class="img-circle" alt="">
+                        <img src="/assets/img/avatar4.jpg"class="img-circle" alt="">
                     </span>
                     <span class="text">{{ Auth::user()->name }}</span>
                     <span class="caret"></span>

@@ -20,7 +20,11 @@ class SaleController extends Controller
         if ($companies->count()) {
             $companies->load('sales');
         }
-        return view('sale.index', compact('companies'));
+        $sales = $companies->flatMap(function($item) {
+            return $item->sales;
+        });
+        
+        return view('sale.index', compact('companies', 'sales'));
     }
 
     /**

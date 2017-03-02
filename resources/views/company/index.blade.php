@@ -7,16 +7,32 @@
 @endsection
 
 @section('content')
+    @component('components.crud-table', [
+        'title' => 'Gerência de empresas',
+        'route_create' => route('company.create'),
+        'models' => $companies->map(function($item, $key) {
+            $item->route_show = route('company.show', $item->id);
+            $item->route_edit = route('company.edit', $item->id);
+            $item->route_delete = route('company.destroy', $item->id);
+            return $item;
+        }),
+        'columns' => [
+            '#' => 'id',
+            'CNPJ' => 'cnpj',
+            'Nome' => 'name'
+        ],
+    ])
+    @endcomponent
+
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Gerência de empresas</h3>
                     <div class="actions">
-                        <a href=" {{ route('company.create') }}">
-                            <button type="submit" class="btn btn-success btn-sm btn-trans pull-left">
+                        <a href=" {{ route('company.create') }}" title="Criar">
+                            <button type="button" class="btn btn-success btn-sm">
                                 <li class="fa fa-plus"></li>
-                                Criar
                             </button>
                         </a>
                     </div>
@@ -38,19 +54,24 @@
                                 <td>{{ $company->cnpj }}</td>
                                 <td>{{ $company->name }}</td>
                                 <td>
-                                    <a href="{{ route('company.edit', $company->id) }}">
-                                        <button type="submit" class="btn btn-primary btn-sm btn-trans pull-left">
-                                            <li class="fa fa-edit"></li>
-                                            Editar
+                                    <a href="{{ route('company.show', $company->id) }}" title="Visualizar">
+                                        <button type="button" class="btn btn-info btn-sm">
+                                            <li class="fa fa-eye"></li>
                                         </button>
                                     </a>
-                                    <form action=" {{ route('company.destroy', $company->id) }} " method="post">
+                                    <a href="{{ route('company.edit', $company->id) }}" title="Editar">
+                                        <button type="button" class="btn btn-warning btn-sm">
+                                            <li class="fa fa-edit"></li>
+                                        </button>
+                                    </a>
+                                    <form action=" {{ route('company.destroy', $company->id) }} " method="post" class="form-btn">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger btn-sm btn-trans pull-left">
-                                            <li class="fa icon-trash"></li>
-                                            Excluir
-                                        </button>
+                                        <a href="/#" title="Excluir">
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <li class="fa icon-trash"></li>
+                                            </button>
+                                        </a>
                                     </form>
                                 </td>
                             </tr>
