@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Voucher;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use laravel\pagseguro\Platform\Laravel5\PagSeguro;

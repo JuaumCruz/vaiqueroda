@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Company;
 
 class CompanySeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "La Favoritta",
             'cnpj'=> "00123456000100",
@@ -19,7 +20,7 @@ class CompanySeeder extends Seeder
             'image'=> "logo-lafavoritta.png",
         ]);
 
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "Circuito Int Paladino",
             'cnpj'=> "00123456000102",
@@ -27,7 +28,7 @@ class CompanySeeder extends Seeder
             'image'=> "paladino.jpg",
         ]);
 
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "Parque Aguartico",
             'cnpj'=> "00123456000110",
@@ -35,7 +36,7 @@ class CompanySeeder extends Seeder
             'image'=> "parqueaguatico.jpg",
         ]);
 
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "Cachaçaria Central",
             'cnpj'=> "10123456000100",
@@ -43,7 +44,7 @@ class CompanySeeder extends Seeder
             'image'=> "cachacariacentral.png",
         ]);
 
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "Churrascaria Tererê",
             'cnpj'=> "00123456010100",
@@ -51,7 +52,7 @@ class CompanySeeder extends Seeder
             'image'=> "terere.png",
         ]);
 
-        factory(\App\Company::class)->create([
+        factory(Company::class)->create([
             'user_id' => 1,
             'name' => "Bessa Grill",
             'cnpj'=> "00123456110100",

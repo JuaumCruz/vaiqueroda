@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\User;
+use App\Models\Company;
+use App\Models\Sale;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -12,7 +16,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -23,10 +27,10 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Company::class, function (Faker\Generator $faker) {
+$factory->define(Company::class, function (Faker\Generator $faker) {
    return [];
 });
 
-$factory->define(App\Sale::class, function (Faker\Generator $faker) {
+$factory->define(Sale::class, function (Faker\Generator $faker) {
     return [];
 });

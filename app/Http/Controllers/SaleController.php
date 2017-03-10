@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Sale;
-use App\Company;
+use App\Models\Sale;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +23,7 @@ class SaleController extends Controller
         $sales = $companies->flatMap(function($item) {
             return $item->sales;
         });
-        
+
         return view('sale.index', compact('companies', 'sales'));
     }
 

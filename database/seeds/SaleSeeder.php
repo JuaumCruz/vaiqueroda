@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Sale;
 
 class SaleSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class SaleSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Sale::class)->create([
+        factory(Sale::class)->create([
             'company_id' => 1,
             'name' => '20% DESCONTO RODIZIO',
             'description' => '',
@@ -21,7 +22,7 @@ class SaleSeeder extends Seeder
             'value' => '14.99'
         ]);
 
-        factory(\App\Sale::class)->create([
+        factory(Sale::class)->create([
             'company_id' => 2,
             'name' => '30% DESCONTO KART',
             'description' => 'Desconto 2h Kart',
@@ -31,7 +32,7 @@ class SaleSeeder extends Seeder
             'value' => '54.99'
         ]);
 
-        factory(\App\Sale::class)->create([
+        factory(Sale::class)->create([
             'company_id' => 5,
             'name' => 'DESCONTO PARA 5 PESSOAS',
             'description' => '',
@@ -41,7 +42,7 @@ class SaleSeeder extends Seeder
             'value' => '34.99'
         ]);
 
-        factory(\App\Sale::class)->create([
+        factory(Sale::class)->create([
             'company_id' => 5,
             'name' => 'DESCONTO PARA 10 PESSOAS',
             'description' => '',

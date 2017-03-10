@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
-use Illuminate\Http\Request;
+use App\Models\Company;
+use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
@@ -35,7 +35,7 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompanyRequest $request)
     {
         $dados = $request->all();
         $dados['user_id'] = Auth::user()->id;
@@ -73,7 +73,7 @@ class CompanyController extends Controller
      * @param  \App\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(CompanyRequest $request, Company $company)
     {
         $dados = $request->all();
         $company->update($dados);

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class UserSeeder extends Seeder
 {
@@ -11,8 +12,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class)->create([
-            'name' => "Admin Vai que Roda!",
+        factory(User::class)->create([
+            'name' => "Admin",
             'email'=> "admin@admin.com",
             'cpf'=> "71762747111",
             'birth_date'=> "1999-01-01",
@@ -20,7 +21,7 @@ class UserSeeder extends Seeder
             'phone_number' => "11985445522"
         ]);
 
-        factory(\App\User::class)->create([
+        factory(User::class)->create([
             'name' => "User APP",
             'email'=> "user@vaique.com",
             'cpf'=> "05518928467",

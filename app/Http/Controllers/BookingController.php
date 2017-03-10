@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
-use App\Voucher;
+use App\Models\Booking;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

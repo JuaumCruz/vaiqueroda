@@ -19,7 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('name');
             $table->string('cnpj')->unique();
             $table->string('presentation');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

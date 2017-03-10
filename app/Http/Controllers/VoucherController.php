@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Sale;
-use App\Voucher;
+use App\Models\Sale;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
