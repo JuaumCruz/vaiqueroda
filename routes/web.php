@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->namespace('Web')->group(function () {
     Route::name('root')->get('/', 'HomeController@index');
     Route::name('home')->get('/home', 'HomeController@index');
     Route::resource('sale', 'SaleController');

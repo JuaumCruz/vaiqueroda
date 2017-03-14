@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Auth;

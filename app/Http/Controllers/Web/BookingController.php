@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
-use App\Models\Sale;
+use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class VoucherController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,7 @@ class VoucherController extends Controller
      */
     public function index()
     {
-        $vouchers = Auth::user()->vouchers;
-        $bookings = Auth::user()->bookings;
-        return view('voucher.index ', compact('vouchers', 'bookings'));
+        abort(404);
     }
 
     /**
@@ -26,10 +25,9 @@ class VoucherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $sale = Sale::findOrFail($request->get('sale_id'));
-        return view('voucher.create', compact('sale'));
+        abort(404);
     }
 
     /**
@@ -42,9 +40,15 @@ class VoucherController extends Controller
     {
         $dados = $request->all();
         $dados['user_id'] = Auth::user()->id;
-        $dados['code'] = uniqid("#");
-        $dados['active'] = false;
-        Voucher::create($dados);
+        $voucher = Voucher::findOrFail($dados['voucher_id']);
+        $dados['value'] = $voucher->sale->value;
+        $dados['used'] = false;
+
+        $booking = Booking::create($dados);
+
+        if ($booking->voucher->bookings->count() == $voucher->sale->minimum_users) {
+            $booking->voucher->update(['active' => true]);
+        }
 
         return redirect()->route('voucher.index');
     }
@@ -52,21 +56,21 @@ class VoucherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Voucher $voucher)
+    public function show(Booking $booking)
     {
-        return view('voucher.show', compact('voucher'));
+        abort(404);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Voucher $voucher)
+    public function edit(Booking $booking)
     {
         abort(404);
     }
@@ -75,10 +79,10 @@ class VoucherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voucher  $voucher
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Voucher $voucher)
+    public function update(Request $request, Booking $booking)
     {
         abort(404);
     }
@@ -86,10 +90,10 @@ class VoucherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Voucher $voucher)
+    public function destroy(Booking $booking)
     {
         abort(404);
     }

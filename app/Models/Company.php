@@ -10,6 +10,10 @@ class Company extends Model
         'user_id', 'name', 'cnpj', 'presentation', 'image'
     ];
 
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }
