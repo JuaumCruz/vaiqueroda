@@ -11,11 +11,9 @@
 |
 */
 
-
-
 Auth::routes();
 
-Route::middleware('auth')->group(function() {
+Route::middleware('auth')->group(function () {
     Route::name('root')->get('/', 'HomeController@index');
     Route::name('home')->get('/home', 'HomeController@index');
     Route::resource('sale', 'SaleController');
@@ -23,11 +21,10 @@ Route::middleware('auth')->group(function() {
     Route::resource('voucher', 'VoucherController');
     Route::resource('booking', 'BookingController');
 
-
-    Route::post('pagseguro-buy','PagSeguroController@postBuy')->name('pagseguro.buy');
-    Route::post('pagseguro-info','PagSeguroController@postInfo')->name('pagseguro.info');
-    Route::get('pagseguro-redirect','PagSeguroController@getRedirect')->name('pagseguro.redirect');
-    Route::post('pagseguro-notification','PagSeguroController@PostNotification')->name('pagseguro.notification');
+    Route::post('pagseguro-buy', 'PagSeguroController@postBuy')->name('pagseguro.buy');
+    Route::post('pagseguro-info', 'PagSeguroController@postInfo')->name('pagseguro.info');
+    Route::get('pagseguro-redirect', 'PagSeguroController@getRedirect')->name('pagseguro.redirect');
+    Route::post('pagseguro-notification', 'PagSeguroController@PostNotification')->name('pagseguro.notification');
 
     //Route::post('pagseguro-notification', [
     //    'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification',

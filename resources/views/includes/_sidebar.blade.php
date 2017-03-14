@@ -2,7 +2,7 @@
 <aside class="sidebar sidebar-left">
     <div class="sidebar-profile">
         <div class="avatar">
-            <img class="img-circle profile-image" src="/assets/img/avatar4.jpg" alt="profile">
+            <img class="img-circle profile-image" src="/assets/img/user.png" alt="profile">
             <i class="on border-dark animated bounceIn"></i>
         </div>
         <div class="profile-body dropdown">

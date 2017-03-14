@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "barryvdh/laravel-ide-helper": "^2.3",
         "laravel/framework": "5.4.*",
+        "laravel/passport": "^2.0",
         "laravel/tinker": "~1.0",
         "michael/laravelpagseguro": "dev-master"
     },
@@ -22,7 +24,7 @@
         "psr-4": {
             "App\\": "app/"
         },
-        "files":[
+        "files": [
             "app/Helpers/RouteActive.php"
         ]
     },
@@ -44,6 +46,8 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
             "php artisan optimize"
         ]
     },

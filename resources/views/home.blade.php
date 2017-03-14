@@ -20,7 +20,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12">
-                        <img src="assets/img/{{ $sale->company->image }}">
+                        <img src="{{ "assets/img/{$sale->company->image}" }}">
                         </div>
                         <div class="col-xs-12">
                             <p>{{ $sale->company->presentation }}</p>
