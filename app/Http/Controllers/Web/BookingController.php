@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Booking;
-use App\Models\Voucher;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\Booking;
+use VaiQueCompra\Domain\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,7 +56,7 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \VaiQueCompra\Booking  $booking
      * @return \Illuminate\Http\Response
      */
     public function show(Booking $booking)
@@ -67,7 +67,7 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \VaiQueCompra\Booking  $booking
      * @return \Illuminate\Http\Response
      */
     public function edit(Booking $booking)
@@ -79,7 +79,7 @@ class BookingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $booking
+     * @param  \VaiQueCompra\Booking  $booking
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Booking $booking)
@@ -90,7 +90,7 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $booking
+     * @param  \VaiQueCompra\Booking  $booking
      * @return \Illuminate\Http\Response
      */
     public function destroy(Booking $booking)

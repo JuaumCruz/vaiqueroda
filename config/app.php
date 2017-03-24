@@ -173,12 +173,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\RepositoryServiceProvider::class,
+        VaiQueCompra\Application\Providers\AppServiceProvider::class,
+        VaiQueCompra\Application\Providers\AuthServiceProvider::class,
+        // VaiQueCompra\Application\Providers\BroadcastServiceProvider::class,
+        VaiQueCompra\Application\Providers\EventServiceProvider::class,
+        VaiQueCompra\Application\Providers\RouteServiceProvider::class,
+        VaiQueCompra\Application\Providers\DependencyServiceProvider::class,
 
     ],
 

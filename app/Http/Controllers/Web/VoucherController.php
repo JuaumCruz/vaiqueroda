@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Sale;
-use App\Models\Voucher;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\Sale;
+use VaiQueCompra\Domain\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,7 +53,7 @@ class VoucherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \VaiQueCompra\Domain\Models\Voucher  $voucher
      * @return \Illuminate\Http\Response
      */
     public function show(Voucher $voucher)
@@ -64,7 +64,7 @@ class VoucherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \VaiQueCompra\Domain\Models\Voucher  $voucher
      * @return \Illuminate\Http\Response
      */
     public function edit(Voucher $voucher)
@@ -76,7 +76,7 @@ class VoucherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voucher  $voucher
+     * @param  \VaiQueCompra\Domain\Models\Voucher  $voucher
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Voucher $voucher)
@@ -87,7 +87,7 @@ class VoucherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Voucher  $voucher
+     * @param  \VaiQueCompra\Domain\Models\Voucher  $voucher
      * @return \Illuminate\Http\Response
      */
     public function destroy(Voucher $voucher)

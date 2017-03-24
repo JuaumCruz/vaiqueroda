@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Sale;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\Sale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -55,7 +55,7 @@ class SaleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sale $sale
+     * @param  \VaiQueCompra\Domain\Models\Sale $sale
      * @return \Illuminate\Http\Response
      */
     public function show(Sale $sale)
@@ -66,7 +66,7 @@ class SaleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sale $sale
+     * @param  \VaiQueCompra\Domain\Models\Sale $sale
      * @return \Illuminate\Http\Response
      */
     public function edit(Sale $sale)
@@ -79,7 +79,7 @@ class SaleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Sale $sale
+     * @param  \VaiQueCompra\Domain\Models\Sale $sale
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sale $sale)
@@ -93,7 +93,7 @@ class SaleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sale $sale
+     * @param  \VaiQueCompra\Sale $sale
      * @return \Illuminate\Http\Response
      */
     public function destroy(Sale $sale)

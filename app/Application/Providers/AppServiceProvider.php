@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace VaiQueCompra\Application\Providers;
 
+use Code\Validator\Cnpj;
+use Code\Validator\Cpf;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +17,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('cpf', function ($attribute, $value, $parameters, $validator) {
+            $cpf = new Cpf();
+            return $cpf->isValid($value);
+        });
+        Validator::extend('cnpj', function ($attribute, $value, $parameters, $validator) {
+            $cnpj = new Cnpj();
+            return $cnpj->isValid($value);
+        });
     }
 
     /**

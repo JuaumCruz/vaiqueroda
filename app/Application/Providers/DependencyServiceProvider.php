@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Providers;
+namespace VaiQueCompra\Application\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class RepositoryServiceProvider extends ServiceProvider
+class DependencyServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -23,7 +23,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Contracts\Repositories\RepositoryInterface', 'App\Repositories\Repository');
-        $this->app->bind('App\Contracts\Repositories\CompanyRepositoryInterface', 'App\Repositories\CompanyRepository');
+        $this->app->bind('VaiQueCompra\Domain\Contracts\Repositories\CompanyRepositoryInterface', 'VaiQueCompra\Domain\Repositories\CompanyRepository');
     }
 }

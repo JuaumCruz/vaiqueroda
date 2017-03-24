@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Company;
-use App\Http\Requests\CompanyRequest;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Http\Requests\Company\CreateCompany;
+use VaiQueCompra\Domain\Models\Company;
 use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
@@ -36,7 +36,7 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CompanyRequest $request)
+    public function store(CreateCompany $request)
     {
         $dados = $request->all();
         $dados['user_id'] = Auth::user()->id;
@@ -48,7 +48,7 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Company  $company
+     * @param  \VaiQueCompra\Company  $company
      * @return \Illuminate\Http\Response
      */
     public function show(Company $company)
@@ -59,7 +59,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Company  $company
+     * @param  \VaiQueCompra\Company  $company
      * @return \Illuminate\Http\Response
      */
     public function edit(Company $company)
@@ -71,10 +71,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Company  $company
+     * @param  \VaiQueCompra\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(CompanyRequest $request, Company $company)
+    public function update(CreateCompany $request, Company $company)
     {
         $dados = $request->all();
         $company->update($dados);
@@ -85,7 +85,7 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Company  $company
+     * @param  \VaiQueCompra\Company  $company
      * @return \Illuminate\Http\Response
      */
     public function destroy(Company $company)

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace VaiQueCompra\Http\Controllers\Auth;
 
-use App\Models\User;
-use App\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\User;
+use VaiQueCompra\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

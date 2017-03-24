@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Sale;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\Sale;
 
 class HomeController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the VaiQueCompralication dashboard.
      *
      * @return \Illuminate\Http\Response
      */

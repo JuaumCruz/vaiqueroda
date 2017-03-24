@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace VaiQueCompra\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Models\Voucher;
+use VaiQueCompra\Http\Controllers\Controller;
+use VaiQueCompra\Domain\Models\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use laravel\pagseguro\Platform\Laravel5\PagSeguro;

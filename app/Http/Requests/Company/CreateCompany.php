@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace VaiQueCompra\Http\Requests\Company;
 
+use VaiQueCompra\Domain\Contracts\Services\RequestInterface;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompanyRequest extends FormRequest
+class CreateCompany extends FormRequest implements RequestInterface
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +27,9 @@ class CompanyRequest extends FormRequest
         return [
             'user_id' => 'required|exists:users,id',
             'name' => 'required|max:255',
-            'cnpj' => 'required|size:14|unique:companies',
+            'cnpj' => 'required|size:14|cnpj|unique:companies',
             'presentation' => 'required|max:255',
+            'image' => 'mimes:jpeg,bmp,png,jpg,gif'
         ];
     }
 }

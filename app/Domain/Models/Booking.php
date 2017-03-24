@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace VaiQueCompra\Domain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
